@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Aladin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main class="mt-2 mx-2">
+                <v-container>
+                    <v-row class="mb-2">
+                        <v-col class="pa-0">
+                            <v-img class="rounded-lg" src="images/felipeykaty.jpg" alt="Katy, Mateo y Felipe"
+                                max-height="400" max-width="600">
+
+                        </v-col>
+                        <v-col>
+                            <h1 class="titulo d-flex justify-center">Feliz Aniversario my love!</h1>
+
+                            <v-container class="contenido">
+                                <h3>El día de hoy celebramos 1 año de casados y aunque mayor parte del tiempo no hemos
+                                    estado
+                                    juntos,
+                                    sé que vamos a estar para toda la vida <br><br>
+                                    Aunque nuestras diferencias son muchísimas, estamos hechos el uno para el
+                                    otro. Debemos cultivar ese sentimiento que siempre hemos compartido...en las buenas
+                                    y en las malas.</h3><br>
+                                <v-row class="mx-10">
+                                    <v-col class="d-flex align-center justify-center">
+                                        <v-img class="rounded-lg"
+                                            src="https://cdn-0.emojis.wiki/emoji-pics-lf/whatsapp/purple-heart-whatsapp.png"
+                                            max-height="50" max-width="50">
+                                    </v-col>
+                                    <v-col class="d-flex align-center justify-center">
+                                        <v-img class="rounded-lg"
+                                            src="https://cdn-0.emojis.wiki/emoji-pics-lf/whatsapp/blue-heart-whatsapp.png"
+                                            max-height="50" max-width="50">
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-col>
+                    </v-row>
+                    <v-row class="principal-2 rounded-lg pa-2">
+                        <v-col class="d-flex align-center">
+                            <h3 class="contenido">
+                                Tenemos por siempre nuestro pequeño pedacito de alegría, al que pronto veré y abrazaré
+                                mucho. Lo extraño muchísimo. Cuento los días para verlo! Es un niño muy inteligente y
+                                quiero transmitirle también todo mi conocimiento y que se sienta orgulloso de nosotros y
+                                nosotros de él <br>
+                                <br> Cuídalo mucho en mi ausencia. Ya encontraré la forma de compensarlos a los dos por
+                                este tiempo que no estuve a su lado
+                            </h3>
+                        </v-col>
+                        <v-col lg="7">
+                            <v-card elevation="10" class="rounded-lg">
+                                <v-carousel cycle height="300" hide-delimiter-background show-arrows-on-hover>
+                                    <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"
+                                        reverse-transition="fade-transition" transition="fade-transition">
+                                    </v-carousel-item>
+                                </v-carousel>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                    <v-row class="principal-3">
+                        <v-col class="d-flex align-center">
+                            <blockquote class="blockquote font-weight-thin font-italic">"...we've gotta hold on to what
+                                we've got, it doesn't make a difference if we make it or not. We got each other and
+                                that's a lot for love
+                                We'll give it a shot...".</blockquote>
+                        </v-col>
+                    </v-row>
+                    <v-row class="mb-5">
+                        <v-card class="mx-auto" max-width="350" elevation="20">
+                            <v-list-item three-line>
+                                <v-list-item-content>
+                                    <div class="text-overline mb-4">
+                                        Be patient
+                                    </div>
+                                    <v-list-item-title class="text-h5 mb-1">
+                                        Soon...
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle>...we will be together again!
+                                    </v-list-item-subtitle>
+                                </v-list-item-content>
+
+                                <v-list-item-avatar tile size="80">
+                                    <v-img
+                                        src="https://cdn-0.emojis.wiki/emoji-pics-lf/whatsapp/pleading-face-whatsapp.png">
+                                    </v-img>
+                                </v-list-item-avatar>
+                            </v-list-item>
+                        </v-card>
+                        <v-speed-dial v-model="fab" top direction="top">
+                            <template v-slot:activator>
+                                <v-btn v-model="fab" color="blue" dark fixed bottom right fab elevation="20">
+                                    <img v-if="fab" src="images/abierto.png" height="30">
+                                    <img v-else src="images/cerrado.png" height="30">
+                                </v-btn>
+                            </template>
+
+                            <v-btn dark bottom right small fixed fab elevation="20" color="indigo"
+                                @click="dialogFotos = true" style="margin-bottom:70px">
+                                <v-icon>mdi-image</v-icon>
+                            </v-btn>
+                            <!-- <v-btn dark bottom right small fixed fab elevation="20" color="purple" style="margin-bottom:122px">
+                                <v-icon>mdi-home</v-icon>
+                            </v-btn> -->
+                        </v-speed-dial>
+
+
+                        <!-- <v-btn color="blue" dark fixed bottom right fab elevation="20">
+                            <img src="images/cerrado.png" height="30">
+                        </v-btn> -->
+
+
+                    </v-row>
+
+                    <v-row class="rounded-lg pa-2 d-flex align-center justify-center">
+                        <v-col cols="12" class="d-flex align-center justify-center child-flex">
+                            <h3 class="contenido">
+                                Aunque hemos tenido muchos altibajos y distintas facetas, sé que juntos podemos superar
+                                todo lo que se nos venga. Es solo cuestión de tiempo y paciencia my love.
+                            </h3>
+
+                        </v-col>
+                        <v-col v-for="n in 23" :key="n" class="child-flex" cols="1">
+                            <v-img :src="`images/emojis/emoji-whatsapp-${n+1}.png`" aspect-ratio="1"></v-img>
+                        </v-col>
+                        <v-col class="d-flex align-center justify-center">
+                            <h3 class="contenido">
+                                Perdóname todas las veces que estuve ausente y sé que me necesitabas. Recuerda que igual
+                                siempre puedes contar conmigo. Ya falta poco amor....ya falta poquito para volver a
+                                estar los 3 juntitos nuevamente.
+                            </h3>
+                        </v-col>
+                    </v-row>
+                    <v-row>
+                        <v-img src="images/fldsmdfr.png"></v-img>
+                        <v-col>
+                            
+                        <iframe src="https://www.youtube.com/embed/s1tAYmMjLdY">
+                        </iframe>
+
+                        </v-col>
+                        
+                    </v-row>
+
+
+                    <v-dialog v-model="dialog" width="500" persistent>
+                        <v-card>
+                            <v-card-title class="text-h5 purple lighten-2">
+                                Hey pretty lady!
+                            </v-card-title>
+                            <v-card-text>
+                                <h4 class="mt-2">
+                                    Sorry la demora.
+                                </h4>
+
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary" text @click="dialog = false">
+                                    No importa amor. Yo también te amo!
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
+                    <v-dialog v-model="dialogFotos" width="800">
+                        <!-- <template v-slot:activator="{ on, attrs }">
+                            <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
+                                Click Me
+                            </v-btn>
+                        </template> -->
+
+                        <v-card>
+                            <v-card-title class="text-h5 purple darken-4 white--text">
+                                <h4 class="fotitos">
+                                    Algunas fotitos de antaño y otras no tanto </h4>
+                                <img src="images/risita.png" height="30">
+                            </v-card-title>
+
+                            <v-card-text>
+                                <v-row>
+                                    <v-col v-for="n in 31" :key="n" class="d-flex child-flex" cols="4"
+                                        style="margin-top: 10px;">
+                                        <v-img :src="`images/fotitos/nosotros-${n + 1}.jpeg`"
+                                            :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                                            aspect-ratio="1" class="grey lighten-2">
+                                            <template v-slot:placeholder>
+                                                <v-row class="fill-height ma-0" align="center" justify="center">
+                                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                                    </v-progress-circular>
+                                                </v-row>
+                                            </template>
+                                        </v-img>
+                                    </v-col>
+                                </v-row>
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary" text @click="dialogFotos = false">
+                                    Te amo
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            mounted() {
+
+            },
+            data() {
+                return {
+                    dialog: false,
+                    dialogFotos: false,
+                    fab: false,
+                    items: [
+                        {
+                            src: 'images/mateo_letters.jpg',
+                        },
+                        {
+                            src: 'images/mateo_5.jpg',
+                        },
+                        {
+                            src: 'images/mateo_9.jpg',
+                        },
+                        {
+                            src: 'images/mateo_11.jpg',
+                        },
+                        {
+                            src: 'images/mateo_13.jpg',
+                        },
+                        {
+                            src: 'images/mateo_10.jpg',
+                        },
+                        {
+                            src: 'images/mateo_1.jpeg',
+                        },
+                        {
+                            src: 'images/mateo_2.jpg',
+                        }
+                    ],
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

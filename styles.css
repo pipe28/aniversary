@@ -1,0 +1,16 @@
+body {
+    background-color: #C6FCFF;
+}
+.principal {
+    background-color: #B3E5FC;
+}
+.principal-2 {
+    background-color: #B39DDB;
+}
+.titulo {
+    font-family: 'Aladin', cursive;
+}
+
+.contenido, .fotitos{
+    font-family: 'Akaya Telivigala', cursive;
+}
